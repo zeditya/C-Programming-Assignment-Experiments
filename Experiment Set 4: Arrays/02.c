@@ -1,6 +1,6 @@
-// 2. Local Variable Access
+// 2. Count Positive, Negative, Odd, and Even Numbers
 
-// Problem: Declare a local variable inside a function and try to access it outside.
+// Problem: Read integers into an array and count how many are positive, negative, odd, and even.
 
 #include <stdio.h>
 
