@@ -4,12 +4,8 @@
 
 #include <stdio.h>
 
-// --- Global Variable ---
-// Declared outside all functions, so it's "global"
-// All functions can see and modify this variable.
 float balance = 0.0;
 
-// --- Function to deposit money ---
 void deposit() {
     float amount;
     printf("Enter amount to deposit: ");
@@ -23,7 +19,6 @@ void deposit() {
     }
 }
 
-// --- Function to withdraw money ---
 void withdraw() {
     float amount;
     printf("Enter amount to withdraw: ");
@@ -39,18 +34,16 @@ void withdraw() {
     }
 }
 
-// --- Function to check balance ---
+
 void checkBalance() {
     printf("Your current balance is: %.2f\n", balance);
 }
 
-// --- Main Function (controls the menu) ---
 int main() {
     
     int choice;
     
-    // 'while(1)' is an infinite loop. It will run forever
-    // until we 'break' or 'return'.
+   
     while (1) {
         
         printf("\n--- Simple Banking System ---\n");
@@ -61,28 +54,27 @@ int main() {
         printf("Enter your choice (1-4): ");
         scanf("%d", &choice);
         
-        // Switch on the user's choice
         switch (choice) {
             case 1:
-                deposit(); // Call deposit function
+                deposit();
                 break;
                 
             case 2:
-                withdraw(); // Call withdraw function
+                withdraw();
                 break;
                 
             case 3:
-                checkBalance(); // Call checkBalance function
+                checkBalance(); 
                 break;
                 
             case 4:
                 printf("Thank you for banking with us. Goodbye!\n");
-                return 0; // This will exit the main function, ending the program
+                return 0; 
                 
             default:
                 printf("Invalid choice. Please try again.\n");
         }
     }
     
-    return 0; // This line is never actually reached, but it's good practice
+    return 0; 
 }

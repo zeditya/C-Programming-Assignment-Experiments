@@ -14,10 +14,8 @@ int main() {
     printf("Enter divisor: ");
     scanf("%d", &divisor);
     
-    // The division operator (/) gives the quotient
     quotient = dividend / divisor;
-    
-    // The modulo operator (%) gives the remainder
+   
     remainder = dividend % divisor;
     
     printf("Quotient = %d\n", quotient);

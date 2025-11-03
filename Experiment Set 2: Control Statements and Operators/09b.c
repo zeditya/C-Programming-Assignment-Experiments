@@ -15,18 +15,14 @@ int main() {
     printf("Enter number of rows: ");
     scanf("%d", &rows);
     
-    // Outer loop for rows
     for (i = 1; i <= rows; i++) {
         
-        // Inner loop for columns
         for (j = 1; j <= i; j++) {
             
-            // Print the current number and then increment it
             printf("%d ", num);
             num++;
         }
         
-        // New line after the row is done
         printf("\n");
     }
     

@@ -9,7 +9,7 @@ int main() {
     int arr[100];
     int n, i;
     
-    // Initialize all counters to 0
+    
     int positive_count = 0;
     int negative_count = 0;
     int even_count = 0;
@@ -23,18 +23,17 @@ int main() {
         scanf("%d", &arr[i]);
     }
     
-    // Loop through the array and check each element
+   
     for (i = 0; i < n; i++) {
         
-        // Check for positive or negative
+        
         if (arr[i] > 0) {
-            positive_count++; // ++ is shorthand for "add 1 to"
+            positive_count++; 
         } else if (arr[i] < 0) {
             negative_count++;
         }
         
-        // Check for even or odd
-        // Note: We treat 0 as an even number
+       
         if (arr[i] % 2 == 0) {
             even_count++;
         } else {

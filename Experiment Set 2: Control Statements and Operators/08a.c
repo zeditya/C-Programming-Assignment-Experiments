@@ -13,14 +13,13 @@ int main() {
     
     original_n = n; // Store the original number
     
-    // Reverse the number (same logic as sum of digits, but we build a new number)
+  
     while (n != 0) {
         remainder = n % 10;
         reversed_n = reversed_n * 10 + remainder;
         n = n / 10;
     }
     
-    // Compare the original number with the reversed number
     if (original_n == reversed_n) {
         printf("%d is a palindrome.\n", original_n);
     } else {

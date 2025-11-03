@@ -21,14 +21,14 @@ int main() {
     
     switch (outer_choice) {
         
-        case 1: // Relational
+        case 1: 
             printf("--- Relational ---\n");
             printf("1. Check a > b\n");
             printf("2. Check a == b\n");
             printf("Enter sub-choice: ");
             scanf("%d", &inner_choice);
             
-            // Nested Switch
+          
             switch (inner_choice) {
                 case 1:
                     printf("Result of (a > b) is: %d (1=true, 0=false)\n", a > b);
@@ -41,14 +41,14 @@ int main() {
             }
             break;
             
-        case 2: // Logical
+        case 2:
             printf("--- Logical ---\n");
-            printf("Result of (a > b && b > 0) is: %d\n", (a > b) && (b > 0)); // 1 && 1 = 1
-            printf("Result of (a < b || b > 0) is: %d\n", (a < b) || (b > 0)); // 0 || 1 = 1
-            printf("Result of !(a == b) is: %d\n", !(a == b)); // !(0) = 1
+            printf("Result of (a > b && b > 0) is: %d\n", (a > b) && (b > 0)); 
+            printf("Result of (a < b || b > 0) is: %d\n", (a < b) || (b > 0)); 
+            printf("Result of !(a == b) is: %d\n", !(a == b)); 
             break;
             
-        case 3: // Bitwise
+        case 3:
             printf("--- Bitwise ---\n");
             printf("a = %d (binary 1010), b = %d (binary 0101)\n", a, b);
             printf("a & b (AND) = %d (binary 0000)\n", a & b);
@@ -59,26 +59,26 @@ int main() {
             printf("a >> 1 (Right Shift) = %d (binary 0101)\n", a >> 1);
             break;
             
-        case 4: // Assignment
+        case 4:
             printf("--- Assignment ---\n");
             c = a;
             printf("c = a  -> c is %d\n", c);
-            c += b; // same as c = c + b
+            c += b; 
             printf("c += b -> c is %d\n", c);
-            c -= a; // same as c = c - a
+            c -= a; 
             printf("c -= a -> c is %d\n", c);
             break;
             
-        case 5: // Increment/Decrement
+        case 5: 
             printf("--- Increment/Decrement ---\n");
             printf("Original a = %d\n", a);
-            a++; // a becomes 11
+            a++; 
             printf("a++ (Post-increment) -> a is now %d\n", a);
-            ++a; // a becomes 12
+            ++a; 
             printf("++a (Pre-increment)  -> a is now %d\n", a);
-            a--; // a becomes 11
+            a--; 
             printf("a-- (Post-decrement) -> a is now %d\n", a);
-            --a; // a becomes 10
+            --a; 
             printf("--a (Pre-decrement)  -> a is now %d\n", a);
             break;
             

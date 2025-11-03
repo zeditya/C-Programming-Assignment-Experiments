@@ -13,18 +13,14 @@ int main() {
     original_number = number;
     
     while (original_number != 0) {
-        
-        // Get the last digit
+       
         remainder = original_number % 10;
-        
-        // Add the cube of the digit to the result
+      
         result = result + (remainder * remainder * remainder);
         
-        // Remove the last digit
         original_number = original_number / 10;
     }
     
-    // Check if the result is equal to the original number
     if (result == number) {
         printf("%d is an Armstrong number.\n", number);
     } else {

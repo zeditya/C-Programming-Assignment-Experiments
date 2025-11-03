@@ -10,8 +10,7 @@ int main() {
     
     printf("Enter a number: ");
     scanf("%d", &number);
-    
-    // Use the ternary operator
+   
     (number % 2 == 0) ? printf("%d is Even\n", number) : printf("%d is Odd\n", number);
     
     return 0;

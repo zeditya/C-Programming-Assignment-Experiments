@@ -17,14 +17,13 @@ int main() {
         scanf("%d", &arr[i]);
     }
     
-    // Get the number to search for
+    
     printf("Enter the number to find: ");
     scanf("%d", &numToFind);
     
-    // Loop through the array
+    
     for (i = 0; i < n; i++) {
-        
-        // If the current element matches the number, increment count
+       
         if (arr[i] == numToFind) {
             count++;
         }
