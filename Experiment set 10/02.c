@@ -7,31 +7,45 @@
 #include <math.h>
 #include <string.h>
 
-void printAll(int num, ...) {
+double sum_values(int count, ...) {
     va_list args;
-    va_start(args, num);
-    for(int i = 0; i < num; i++) {
-        printf("%d ", va_arg(args, int));
+    double sum = 0;
+    int i;
+
+    va_start(args, count);
+    for (i = 0; i < count; i++) {
+        sum += va_arg(args, double);
     }
     va_end(args);
+    return sum;
 }
 
 int main() {
-    char c = 'a';
-    printf("%c\n", toupper(c));
+    char str[50] = "hello world";
+    int i;
+    time_t current_time;
+    double number = 25.0;
+    int *ptr;
 
-    char *p = malloc(10);
-    assert(p != NULL);
+    printf("Original string: %s\n", str);
+    printf("Uppercase: ");
+    for(i = 0; i < strlen(str); i++) {
+        printf("%c", toupper(str[i]));
+    }
+    printf("\n");
 
-    strcpy(p, "test");
-    printf("%s\n", p);
+    ptr = (int*)malloc(sizeof(int));
+    assert(ptr != NULL);
+    *ptr = 100;
+    printf("Dynamic memory value: %d\n", *ptr);
+    free(ptr);
 
-    printAll(3, 1, 2, 3);
+    printf("Square root of %.2f is %.2f\n", number, sqrt(number));
 
-    printf("\n%f\n", sqrt(16));
+    printf("Sum of 3 numbers (1.1, 2.2, 3.3): %.2f\n", sum_values(3, 1.1, 2.2, 3.3));
 
-    printf("%ld\n", time(NULL));
+    time(&current_time);
+    printf("Current time: %s", ctime(&current_time));
 
-    free(p);
     return 0;
 }

@@ -1,19 +1,20 @@
 #include <stdio.h>
 
-void modify(int *x, float *y, char *z) {
-    *x = *x + 5;
-    *y = *y * 2;
-    *z = 'Z';
+void modify(int *a, int *b) {
+    *a = *a + 10;
+    *b = *b * 2;
 }
 
 int main() {
-    int a = 10;
-    float b = 3.5;
-    char c = 'A';
+    int x = 50, y = 20;
 
-    modify(&a, &b, &c);
+    printf("Before Function Call:\n");
+    printf("x = %d, y = %d\n", x, y);
 
-    printf("%d %.2f %c\n", a, b, c);
+    modify(&x, &y);
+
+    printf("After Function Call:\n");
+    printf("x = %d, y = %d\n", x, y);
 
     return 0;
 }

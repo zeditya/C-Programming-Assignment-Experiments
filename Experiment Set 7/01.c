@@ -2,16 +2,20 @@
 
 int main() {
     int a = 10;
-    float b = 5.5;
-    char c = 'X';
+    float b = 3.14;
+    char c = 'Z';
 
-    int *p1 = &a;
-    float *p2 = &b;
-    char *p3 = &c;
+    int *ptr_int = &a;
+    float *ptr_float = &b;
+    char *ptr_char = &c;
 
-    printf("%d %p\n", *p1, p1);
-    printf("%.2f %p\n", *p2, p2);
-    printf("%c %p\n", *p3, p3);
+    printf("Integer Value: %d, Pointer Value: %d\n", a, *ptr_int);
+    printf("Float Value: %.2f, Pointer Value: %.2f\n", b, *ptr_float);
+    printf("Char Value: %c, Pointer Value: %c\n", c, *ptr_char);
+
+    printf("Address of int: %p\n", (void*)ptr_int);
+    printf("Address of float: %p\n", (void*)ptr_float);
+    printf("Address of char: %p\n", (void*)ptr_char);
 
     return 0;
 }

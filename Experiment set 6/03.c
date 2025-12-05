@@ -1,32 +1,39 @@
 #include <stdio.h>
 #include <string.h>
 
-struct student {
-    int roll_no;
-    char fname[50];
-    char lname[50];
+struct employee {
+    char name[50];
+    char address[100];
+    float salary;
 };
 
 int main() {
-    struct student s[5], temp;
+    struct employee emp[5], temp;
     int i, j;
 
-    for (i = 0; i < 5; i++) {
-        scanf("%d %s %s", &s[i].roll_no, s[i].fname, s[i].lname);
+    for(i = 0; i < 5; i++) {
+        printf("Enter details for employee %d\n", i + 1);
+        printf("Name: ");
+        scanf(" %[^\n]", emp[i].name);
+        printf("Address: ");
+        scanf(" %[^\n]", emp[i].address);
+        printf("Salary: ");
+        scanf("%f", &emp[i].salary);
     }
 
-    for (i = 0; i < 4; i++) {
-        for (j = i + 1; j < 5; j++) {
-            if (s[i].roll_no > s[j].roll_no) {
-                temp = s[i];
-                s[i] = s[j];
-                s[j] = temp;
+    for(i = 0; i < 5 - 1; i++) {
+        for(j = 0; j < 5 - 1 - i; j++) {
+            if(strcmp(emp[j].name, emp[j + 1].name) > 0) {
+                temp = emp[j];
+                emp[j] = emp[j + 1];
+                emp[j + 1] = temp;
             }
         }
     }
 
-    for (i = 0; i < 5; i++) {
-        printf("%d %s %s\n", s[i].roll_no, s[i].fname, s[i].lname);
+    printf("\nEmployees sorted by Name:\n");
+    for(i = 0; i < 5; i++) {
+        printf("Name: %s, Address: %s, Salary: %.2f\n", emp[i].name, emp[i].address, emp[i].salary);
     }
 
     return 0;

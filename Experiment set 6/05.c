@@ -1,33 +1,22 @@
 #include <stdio.h>
 #include <string.h>
 
-struct employee {
+union Address {
     char name[50];
-    char address[100];
-    float salary;
+    char home_address[100];
+    char hostel_address[100];
+    char city[50];
+    char state[50];
+    char zip[20];
 };
 
 int main() {
-    struct employee e[5], temp;
-    int i, j;
+    union Address addr;
 
-    for (i = 0; i < 5; i++) {
-        scanf("%s %s %f", e[i].name, e[i].address, &e[i].salary);
-    }
+    printf("Enter your present Hostel Address: ");
+    scanf(" %[^\n]", addr.hostel_address);
 
-    for (i = 0; i < 4; i++) {
-        for (j = i + 1; j < 5; j++) {
-            if (strcmp(e[i].name, e[j].name) > 0) {
-                temp = e[i];
-                e[i] = e[j];
-                e[j] = temp;
-            }
-        }
-    }
-
-    for (i = 0; i < 5; i++) {
-        printf("%s %s %.2f\n", e[i].name, e[i].address, e[i].salary);
-    }
+    printf("\nPresent Address: %s\n", addr.hostel_address);
 
     return 0;
 }

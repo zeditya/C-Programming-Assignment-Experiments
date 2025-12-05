@@ -1,12 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    FILE *fp = fopen("data.txt", "r");
+    FILE *fptr;
     char ch;
-    if(fp == NULL) return 0;
-    while((ch = fgetc(fp)) != EOF) {
+
+    fptr = fopen("example.txt", "r");
+
+    if (fptr == NULL) {
+        printf("File not found! Run the write program first.\n");
+        return 1;
+    }
+
+    printf("File Content:\n");
+    while ((ch = fgetc(fptr)) != EOF) {
         printf("%c", ch);
     }
-    fclose(fp);
+    printf("\n");
+
+    fclose(fptr);
     return 0;
 }

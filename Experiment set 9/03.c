@@ -1,12 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    FILE *fp = fopen("data.txt", "r");
-    char line[100];
-    if(fp == NULL) return 0;
-    while(fgets(line, 100, fp)) {
+    FILE *fptr;
+    char line[150];
+
+    fptr = fopen("example.txt", "r");
+
+    if (fptr == NULL) {
+        printf("File not found! Run the write program first.\n");
+        return 1;
+    }
+
+    printf("Reading Line by Line:\n");
+    while (fgets(line, sizeof(line), fptr)) {
         printf("%s", line);
     }
-    fclose(fp);
+    printf("\n");
+
+    fclose(fptr);
     return 0;
 }
